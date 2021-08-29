@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    width="0"
+    height="200px"
+    version="1.1"
+    class="gradient-mask"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradientGauge">
+            <stop class="color-red" offset="0%"/>
+            <stop class="color-yellow" offset="17%"/>
+            <stop class="color-green" offset="40%"/>
+            <stop class="color-yellow" offset="87%"/>
+            <stop class="color-red" offset="100%"/>
+        </linearGradient>
+    </defs>
+</svg>

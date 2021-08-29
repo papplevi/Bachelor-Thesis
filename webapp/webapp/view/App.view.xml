@@ -1,0 +1,152 @@
+<mvc:View
+    height="100%"
+    controllerName="SmartHome.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt">
+    <Page
+        showHeader="false"
+        enableScrolling="false">
+        <tnt:ToolHeader>
+        <Button id="bHome" icon="sap-icon://home" press="bHomePress" />
+        <Button id="bBulb" icon="sap-icon://lightbulb" press="bBulbPress" />
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+            <Title
+                text="SmartHome with Raspberry Pi"
+                tooltip="SmartHome with Raspberry Pi">
+                <layoutData>
+                        <ToolbarLayoutData shrinkable="true" minWidth="0px"/>
+                </layoutData>
+            </Title>
+            <ToolbarSpacer/>
+            <MenuButton text="Despre:">
+                <menu>
+                    <Menu itemSelected="onMenuAction">
+                        <MenuItem id="bPappLevente" text="Papp Levente" icon="sap-icon://customer" />
+                        <MenuItem id="bQtFramework" text="Framework-ul Qt" icon="res/qt_logo.svg" />
+                        <MenuItem id="bOpenUI5Framework" text="Framework-ul OpenUI5" icon="sap-icon://sap-ui5" />
+                    </Menu>
+                </menu>
+            </MenuButton>
+            <Button id="bContact" text="Contact" icon="sap-icon://customer-and-contacts" press="bContactPress" />
+            <Button id="bAdmin" text="Administrare" icon="sap-icon://action-settings" press="bAdminPress" />
+            <Button id="bJurnal" text="Jurnal" icon="res/log.png" />
+        <ToolbarSpacer/>
+        </tnt:ToolHeader>
+        <l:FixFlex
+            vertical="false"
+            class="fixFlexHorizontal">
+            <l:fixContent
+                height="auto">
+                <Panel
+                    id="navigationPanel"
+                    height="100%"
+                    width="300px"
+                    backgroundDesign="Transparent"
+                    expandAnimation="true"
+                    accessibleRole="Region"
+                    class="navigationPanel"
+                    headerText="Navigație">
+                    <Label
+                        text="Căutare"
+                        design="Bold"
+                        class="sapUiSmallMarginTop"/>
+                    <Input 
+                        width="auto"
+                        placeholder="Căutare"
+                        id="inputSearch"
+                        liveChange="onFilterSearch"/>
+                    <Toolbar width="100%" height="25px"/>
+                    <l:VerticalLayout
+                        id="vRooms"
+                        height="20%"
+                        width="70%"
+                        class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+                        <l:content>
+                            <l:VerticalLayout
+                                id="vBedroom"
+                                visible="true">
+                                <Image
+                                    id="iBedroom"
+                                    width="100%"
+                                    height="100%"
+                                    src="/res/bedroom.jpeg"
+                                    tooltip="Informații ambientale despre dormitor"/>
+                                <Panel
+                                    backgroundDesign="Transparent"
+                                    class="sapUiSmallMarginTopBottom">
+                                    <headerToolbar>
+                                        <Toolbar>
+                                            <Title text="Dormitor" class="roomTextStyle"/>
+                                        </Toolbar>
+                                    </headerToolbar>
+                                    <Label id="lblTemperature" width="100%" text="Temperatură"/>
+                                    <Label id="lblHumidity" width="100%" text="Umiditate"/>
+                                </Panel>
+                            </l:VerticalLayout>
+                            <l:VerticalLayout
+                                id="vKitchen"
+                                visible="true">
+                                <Image
+                                    id="iKitchen"
+                                    width="100%"
+                                    height="100%"
+                                    src="/res/kitchen.png"
+                                    tooltip="Informații ambientale despre bucătărie"/>
+                                <Panel
+                                    backgroundDesign="Transparent"
+                                    class="sapUiSmallMarginTopBottom">
+                                    <headerToolbar>
+                                        <Toolbar>
+                                            <Title text="Bucătărie" class="roomTextStyle"/>
+                                        </Toolbar>
+                                    </headerToolbar>
+                                    <Label width="100%" text="Temperatură: N/A"/>
+                                    <Label width="100%" text="Umiditate: N/A"/>
+                                </Panel>
+                            </l:VerticalLayout>
+                            <l:VerticalLayout
+                                id="vLiving"
+                                visible="true">
+                                <Image
+                                    id="iLiving"
+                                    width="100%"
+                                    height="100%"
+                                    src="/res/living.png"
+                                    tooltip="Informații ambientale despre living"/>
+                                <Panel
+                                    backgroundDesign="Transparent"
+                                    class="sapUiSmallMarginTopBottom">
+                                    <headerToolbar>
+                                        <Toolbar>
+                                            <Title text="Living" class="roomTextStyle"/>
+                                        </Toolbar>
+                                    </headerToolbar>
+                                    <Label width="100%" text="Temperatură: N/A"/>
+                                    <Label width="100%" text="Umiditate: N/A"/>
+                                </Panel>
+                            </l:VerticalLayout>
+                        </l:content>
+                    </l:VerticalLayout>
+                    <Toolbar width="100%" height="25px"/>
+                    <VBox class="separator"/>
+                </Panel>
+            </l:fixContent>
+            <l:flexContent>
+                <App
+                    id="appMainContents"/>
+            </l:flexContent>
+        </l:FixFlex>
+    </Page>
+</mvc:View>

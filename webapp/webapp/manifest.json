@@ -1,0 +1,69 @@
+{
+    "_version": "1.1.0",
+    "sap.app": {
+      "_version": "1.1.0",
+      "id": "SmartHome",
+      "type": "application",
+      "title": "Smart Home",
+      "applicationVersion": {
+        "version": "1.0.0"
+      }
+    },
+    "sap.ui": {
+      "_version": "1.1.0",
+      "technology": "UI5",
+      "deviceTypes": {
+        "desktop": true,
+        "tablet": true,
+        "phone": true
+      },
+      "supportedThemes": [
+        "sap_hcb",
+        "sap_bluecrystal",
+        "sap_belize"
+      ]
+    },
+    "sap.ui5": {
+      "_version": "1.1.0",
+      "rootView": "SmartHome.view.App",
+      "dependencies": {
+        "minUI5Version": "1.30",
+        "libs": {
+          "sap.ui.core": {},
+          "sap.m": {},
+          "sap.tnt": {},
+          "sap.ui.layout": {}
+        }
+      },
+      "routing": {
+        "config": {
+          "routerClass": "sap.m.routing.Router",
+          "controlId": "appMainContents",
+          "viewType": "XML",
+          "controlAggregation": "pages",
+          "viewPath": "SmartHome.view",
+          "async": true
+        },
+        "routes": [
+          {
+              "pattern": "",
+              "name": "details",
+              "target": "details"
+          },
+          {
+              "pattern": "Contact",
+              "name": "contact",
+              "target": "contact"
+          }
+        ],
+        "targets": {
+          "details": {
+              "viewName": "Details"
+          },
+          "contact": {
+              "viewName": "Contact"
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,148 @@
+<mvc:View
+    controllerName="SmartHome.controller.Details"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    xmlns:t="sap.ui.table">
+    <Page
+        showHeader="false">
+        <l:VerticalLayout
+            id="vDetailsPage"
+            width="100%">
+            <l:content>
+                <Panel 
+                    width="100%"
+                    height="100%">
+                    <content>
+                        <Link
+                            class="weatherwidget-io"
+                            href="https://forecast7.com/ro/46d1921d31/arad/"
+                            data-label_1="ARAD"
+                            data-label_2="VREME"
+                            data-theme="original"/>
+                    </content>
+                    <layoutData>
+                        <l:SplitterLayoutData size="50%" />
+                    </layoutData>
+                    <content>
+                        <Panel
+                            id="plInstalatii"
+                            width="100%"
+                            expandable="true"
+                            expanded="false"
+                            backgroundDesign="Transparent"
+                            class="sapUiMediumMarginTopBottom">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Title text="Instalatii"/>
+                                </Toolbar>
+                            </headerToolbar>
+                            <l:VerticalLayout
+                                class="sapUiContentPadding equalColumns"
+                                width="100%" >
+                                <l:content>
+                                    <FlexBox class="columns">
+                                        <l:VerticalLayout
+                                            width="250px">
+                                            <Image
+                                                id="iAerConditionat"
+                                                width="55%"
+                                                height="55%"
+                                                src="/res/aer-conditionat.png"
+                                                tooltip="..."/>
+                                            <Text text="Aer condiționat" class="roomTextStyle"/>
+                                            <Switch 
+                                                id="swAerConditionat"
+                                                tooltip="Pornește sau oprește aerul condționat"
+                                                class="sapUiSmallMarginBottom">
+                                                <layoutData>
+                                                    <FlexItemData growFactor="1" />
+                                                </layoutData>
+                                            </Switch>
+                                        </l:VerticalLayout>
+                                        <l:VerticalLayout
+                                            width="250px">
+                                            <Image
+                                                id="iCentrala"
+                                                width="55%"
+                                                height="55%"
+                                                src="/res/centrala.svg"
+                                                tooltip="..."/>
+                                            <Text text="Centrală termică" class="roomTextStyle"/>
+                                            <Switch 
+                                                id="swCentrala"
+                                                tooltip="Pornește sau oprește centrala termică"
+                                                class="sapUiSmallMarginBottom">
+                                                <layoutData>
+                                                    <FlexItemData growFactor="1" />
+                                                </layoutData>
+                                            </Switch>
+                                        </l:VerticalLayout>
+                                        <l:VerticalLayout
+                                            width="250px">
+                                            <Image
+                                                id="iDezumidificator"
+                                                width="55%"
+                                                height="55%"
+                                                src="/res/dezumidificator.png"
+                                                tooltip="..."/>
+                                            <Text text="Dezumidificator" class="roomTextStyle"/>
+                                            <Switch 
+                                                id="swDezumidificator"
+                                                tooltip="Pornește sau oprește dezumidificatorul"
+                                                class="sapUiSmallMarginBottom">
+                                                <layoutData>
+                                                    <FlexItemData growFactor="1" />
+                                                </layoutData>
+                                            </Switch>
+                                        </l:VerticalLayout>
+                                    </FlexBox>
+                                </l:content>
+                            </l:VerticalLayout>
+                        </Panel>
+                        <Panel
+                            id="plParametriAmbientali"
+                            width="100%"
+                            class="sapUiMediumMarginTopBottom">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Title text="Parametri Ambientali"/>
+                                    <Button
+                                        id="bIstoric"
+                                        icon="sap-icon://hint"
+                                        tooltip="AratÄƒ istoricul"
+                                        class="sapUiSizeCompact sapMBtnIcon"
+                                        press="bIstoricPress"/>
+                                </Toolbar>
+                            </headerToolbar>
+                            <l:HorizontalLayout
+                                id="hTables"
+                                class="sapUiSmallMarginTop"
+                                width="800px">
+                                <l:content>
+                                    <core:HTML id="HTMLCanvas"
+                                    content="&lt;canvas id=&quot;myChart&quot;
+                                    style=&quot;height: 500px; width: 900px;&quot;
+                                        &lt;/canvas&gt;"/>
+                                    <core:HTML
+                                        content='&lt;div class=&quot;v1&quot;&gt;'>
+                                    </core:HTML>
+                                    <core:HTML
+                                        afterRendering="gaugeInit"
+                                        content='&lt;div class=&quot;gauge-container&quot;&gt;
+                                                &lt;div class=&quot;gauge&quot;&gt;
+                                                &lt;/div&gt;
+                                                style=&quot; height:400px; width:100%&quot;'>
+                                    </core:HTML>
+                                </l:content>
+                            </l:HorizontalLayout>
+                        </Panel>
+                    </content>
+                </Panel>
+            </l:content>
+        </l:VerticalLayout>
+    </Page>
+</mvc:View>
